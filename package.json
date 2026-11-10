@@ -1,6 +1,6 @@
 {
   "name": "@hibira-io/handoff",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Take a photo on your phone and it lands in the form on your computer: QR pairing, end-to-end encrypted, WebRTC with a Pusher-protocol relay fallback, no upload server",
   "keywords": [
     "handoff",
