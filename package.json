@@ -1,0 +1,104 @@
+{
+  "name": "@hibira-io/handoff",
+  "version": "0.1.0",
+  "description": "Take a photo on your phone and it lands in the form on your computer: QR pairing, end-to-end encrypted, WebRTC with a Pusher-protocol relay fallback, no upload server",
+  "keywords": [
+    "handoff",
+    "qr-code",
+    "phone",
+    "camera",
+    "file-transfer",
+    "webrtc",
+    "e2e",
+    "pusher",
+    "pusher-js",
+    "presence",
+    "realtime",
+    "web-component",
+    "hibira"
+  ],
+  "homepage": "https://hibira.io",
+  "bugs": {
+    "url": "https://github.com/hibira-io/handoff/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hibira-io/handoff.git"
+  },
+  "license": "MIT",
+  "author": "Hibira (https://hibira.io)",
+  "type": "module",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./index.d.ts",
+      "default": "./index.js"
+    },
+    "./server": {
+      "types": "./server.d.ts",
+      "default": "./server.js"
+    },
+    "./react": {
+      "types": "./react.d.ts",
+      "default": "./react.js"
+    },
+    "./element": {
+      "types": "./element.d.ts",
+      "default": "./element.js"
+    },
+    "./dist/element.js": "./dist/element.js"
+  },
+  "files": [
+    "index.js",
+    "index.d.ts",
+    "server.js",
+    "server.d.ts",
+    "react.js",
+    "react.d.ts",
+    "element.js",
+    "element.d.ts",
+    "strings.js",
+    "dist/element.js",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md"
+  ],
+  "sideEffects": [
+    "./element.js",
+    "./dist/element.js"
+  ],
+  "jsdelivr": "dist/element.js",
+  "unpkg": "dist/element.js",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "esbuild element.js --bundle --minify --format=iife --target=es2020 --legal-comments=eof --outfile=dist/element.js",
+    "prepack": "npm run build",
+    "test": "node --test test/*.test.mjs"
+  },
+  "dependencies": {
+    "qrcode": "^1.5.4"
+  },
+  "peerDependencies": {
+    "pusher-js": ">=7",
+    "react": ">=17"
+  },
+  "peerDependenciesMeta": {
+    "pusher-js": {
+      "optional": true
+    },
+    "react": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "esbuild": "^0.25.0",
+    "pusher-js": "^8.4.0"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  }
+}
